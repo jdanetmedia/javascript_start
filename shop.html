@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Start på Javascript</title>
+    <script src="main.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *:focus {
+            outline: 0;
+        }
+        body {
+            background-color: #34495e;
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+        }
+        h1 {
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 16px;
+            line-height: 22px;
+            margin: 0 0 10px 0;
+        }
+        p.intro {
+            margin: 10px 0 20px 0;
+        }
+        .wrapper {
+            width: 960px;
+            margin: 120px auto;
+            background-color: #e67e22;
+            min-height: 1px;
+            overflow: hidden;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 45px 45px 0px 0px rgba(0,0,0,0.35);
+            box-shadow: 45px 45px 0px 0px rgba(0,0,0,0.35);
+        }
+        .col1 {
+            width: 50%;
+            float: left;
+            padding: 30px;
+        }
+        .col2 {
+            width: 50%;
+            float: left;
+            padding: 30px;
+        }
+        select {
+            background: #ecf0f1;
+            width: 100%;
+            font-size: 16px;
+            color: #333;
+            border: 0;
+            border-radius: 3;
+            height: 40px;
+            margin: 0 0 20px 0;
+        }
+        option {
+            height: 60px;
+        }
+        input[type="button"] {
+            width: 100%;
+            font-size: 16px;
+            padding: 20px;
+            background: #2ecc71;
+            border: none;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-top: 10px;
+        }
+        input[type="button"]:hover {
+            background-color: #3498db;
+        }
+        #price-sum {
+            color: #f1c40f;
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin: 0 0 20px 0;
+        }
+        a.navigation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 30px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body onload="changeFunc()">
+    <div class="wrapper">
+        <div class="col1">
+            <h1>Vælg din opbygning</h1>
+            <p class="intro">Herunder kan du ændre din opbygning og se din endelige pris.</p>
+
+            <form name="form1" action="">
+                <p>Vælg processor</p>
+                <select id="ghz">
+                    <option value="700">1.8 GHz</option>
+                    <option value="900">2.0 GHz</option>
+                    <option value="1100">2.7 GHz</option>
+                    <option value="1300">3.2 GHz</option>
+                </select>
+                <p>Vælg lager</p>
+                <select id="storage">
+                    <option value="700">128 GB SSD</option>
+                    <option value="900">256 GB SSD</option>
+                    <option value="1500">512 GB SSD</option>
+                    <option value="2500">1 TB SSD</option>
+                </select>
+                <p>Vælg skærmstørrelse</p>
+                <select id="screenS">
+                    <option value="700">13"</option>
+                    <option value="900">15"</option>
+                    <option value="1500">17"</option>
+                </select>
+                <p>Vælg OS</p>
+                <select id="oS">
+                    <option value="200">OS X</option>
+                    <option value="300">Windows 10</option>
+                </select>
+                <p>Vælg kabinet</p>
+                <select id="caSe">
+                    <option value="500">Aluminium</option>
+                    <option value="400">Plastic-Fantastic</option>
+                </select>
+                <input type="button" value="Genberegn pris" id="calcPrice" onclick="changeFunc()" />
+            </form>
+        </div>
+        <div class="col2">
+            <img src="http://pngimg.com/upload/laptop_PNG5900.png" />
+            <div id="price-sum"></div>
+        </div>
+    </div>
+    <script>
+
+        function changeFunc() {
+            var speed = ghz.options[ghz.selectedIndex].value;
+            var speednum = parseInt(speed);
+            var hdd = storage.options[storage.selectedIndex].value;
+            var hddnum = parseInt(hdd);
+            var screenSize = screenS.options[screenS.selectedIndex].value;
+            var screennum = parseInt(screenSize);
+            var opSys = oS.options[oS.selectedIndex].value;
+            var opSysnum = parseInt(opSys);
+            var cabinet = caSe.options[caSe.selectedIndex].value;
+            var cabinetNum = parseInt(cabinet);
+            var priceSum = speednum + hddnum + screennum + opSysnum + cabinetNum;
+            document.getElementById("price-sum").innerHTML = "Din pris: " + priceSum + " DKK";
+        }
+
+
+    </script>
+    <a class="navigation" href="index.html">Temperatur converter</a>
+</body>
+</html>

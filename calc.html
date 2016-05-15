@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Start på Javascript</title>
+    <script src="main.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *:focus {
+            outline: 0;
+        }
+        body {
+            background-color: #34495e;
+            font-family: 'Open Sans', sans-serif;
+            padding: 10px;
+        }
+        .wrapper {
+            width: 400px;
+            min-height: 300px;
+            margin: 200px auto;
+            padding: 40px;
+            background-color: #e67e22;
+            border-radius: 5px;
+            -webkit-box-shadow: 45px 45px 0px 0px rgba(0,0,0,0.35);
+            box-shadow: 45px 45px 0px 0px rgba(0,0,0,0.35);
+
+        }
+        h1 {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 22px;
+            font-size: 16px;
+            line-height: 20px;
+            color: #fff;
+        }
+        input[type="number"],
+        input[type="button"] {
+            font-size: 16px;
+            text-indent: 20px;
+            width: 100%;
+            height: 60px;
+            border-radius: 5px;
+            border: 1px solid #ebebeb;
+            margin-bottom: 20px;
+        }
+        input[type="button"]:focus {
+            background-color: #3498db;
+        }
+        input[type="button"] {
+            text-indent: 0;
+            background-color: #2ecc71;
+            color: #fff;
+            text-transform: uppercase;
+            border: none;
+            -webkit-appearance: none;
+        }
+        #result {
+            color: #f1c40f;
+            font-size: 36px;
+            text-align: center;
+        }
+        a.navigation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 30px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Calculate temperature</h1>
+        <p>Insert the temperature in fahrenheit, and we will convert to celcius for you.</p>
+        <form>
+            <input type="number" name="fh" id="fh-input" value="0" />
+            <input type="button" value="Calculate" onclick="calc()"/>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+
+        function calc() {
+            var tempvalue = document.getElementById("fh-input").value;
+            var resultDiv = document.getElementById("result");
+            var reCalc = 5/9 * (tempvalue - 32);
+            resultDiv.innerHTML = "Result: " + reCalc.toFixed(2) + " &#8451;";
+        }
+
+        /*
+        function calc() {
+            var f = document.getElementById("fh-input").value;
+            var c = 5/9 * (f-32);
+            var result = document.getElementById("result");
+            document.write(c);
+        }*/
+    </script>
+    <a class="navigation" href="shop.html">Computershop</a>
+</body>
+</html>

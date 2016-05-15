@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start på Javascript</title>
+    <!-- <script src="main.js"></script> -->
+</head>
+<body onload="calc()">
+    <h1 id="headline">Hello!</h1>
+    <form id="playing-widht-attributes">
+        <input id="textbox1" type="text"><br/>
+        <input type="button" value="Send">
+
+        <script>
+            var prevalue = document.getElementById("textbox1");
+            var htext = document.getElementById("headline");
+            prevalue.setAttribute("value", htext.innerHTML);
+        </script>
+
+    </form>
+</body>
+</html>

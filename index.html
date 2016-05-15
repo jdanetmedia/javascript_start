@@ -3,11 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <title>Start på Javascript</title>
+    <script src="main.js"></script>
 </head>
 <body onload="calc()">
-    <h1>Hello!</h1>
+    <h1>Calculate teparture</h1>
+    <form>
+        <input type="text" name="fh" id="fh-input" />
+        <input type="button" value="Calculate" />
+    </form>
+    <div class="result"></div>
     <p id="result"></p>
+    <script>
+        /*
+         var netPriceOfShoes = 399.20; // interger
+
+         var VAT = 25;
+         var calculatedVAT = (1 + VAT / 100);
+         var grossPriceOfShoes = (netPriceOfShoes * calculatedVAT);
+         var amount = 10;
+
+         function calc() {
+         document.getElementById("result").innerHTML = "You bought a pair of shoes for the price of " + grossPriceOfShoes + " DKK. " + "Buy " + amount + " for the price of " + (grossPriceOfShoes * amount) + " DKK";
+         }; */
+
+        // document.getElementById("result").innerHTML = grossPriceOfShoes;
+
+        // alert("You bought a pair of shoes for the price of " + grossPriceOfShoes + " DKK. " + "Buy " + amount + " for the price of " + (grossPriceOfShoes * amount) + " DKK");
+
+
+        /* Manipulere input fra brugeren */
+
+        /* var f = prompt("Enter degrees Fahrenheit", 32);
+
+        var c = 5/9 * (f-32);
+
+        alert(c.toFixed(2) + " degrees celcius"); */
+
+        function calc() {
+            var f = document.getElementById("fh-input").value;
+            var c = 5/9 * (f-32);
+            var result = document.getElementById("result");
+            document.write(c);
+        }
+
+        /* Discount if else */
+
+        /*var price = 22;
+
+         var age = prompt("Enter your age");
+
+         if(isNaN(age)){
+         alert("Age must be a number!");
+         }
+         else if(age <= 4) {
+         var discountamount = 0;
+         alert(price * discountamount + " DKK");
+         }
+         else if (age <= 15) {
+         var discountamount = 0.5;
+         alert(price * discountamount + " DKK");
+         }
+         else if (age <= 59) {
+         /*var student = prompt("are you a student? yes or no:")
+         if (student == "yes" ) {
+         var discount = 0.75;
+         alert(price * discount + " DKK");
+         }
+         else if(student == "no" ) {
+         var discountamount = 1;
+         alert(price * discountamount + " DKK");
+         }*/
+        /*var student = confirm("Are you a student?");
+         if (student == true) {
+         var discount = 0.75;
+         alert(price * discount + " DKK");
+         }
+         else {
+         var discountamount = 1;
+         alert(price * discountamount + " DKK");
+         }
+         }
+         else if (age >= 60) {
+         var discountamount = 0.5;
+         alert(price * discountamount + " DKK");
+         }*/
+
+        /*var mitArray = [];
+
+        // Skab indhold i array: 15 tilfældige tal mellem 1 og 100
+
+        for (var i = 0; i < 15; i++) {
+
+            mitArray.push(Math.floor(Math.random() * 100) +1);
+
+        }
+
+        // vis indhold i array
+
+        for (var i = 0; i < mitArray.length; i++) {
+
+            document.write(mitArray[i] + " ");
+
+        }
+
+        mitArray.sort(sortNumber);
+        document.write("<br />");
+
+        var counter = 0;
+        while (counter < mitArray.length)
+        {
+            document.write((mitArray[counter] + " "));
+            counter++;
+        }
+
+        document.write("<p><strong>Det største tal i mit array er:</strong> " + findMax(mitArray) + "</p>");
+
+        document.write("<p><strong>Det mindste tal i mit array er:</strong> " + findMin(mitArray) + "</p>");
+
+        document.write("<p><strong>Det mindste tal i mit array er:</strong> " + findSum(mitArray) + "</p>");
+
+        document.write("<p><strong>Det mindste tal i mit array er:</strong> " + findAverage(mitArray) + "</p>");*/
+
+        /*var navn = "Jens Jensen";
+
+        var fornavn = "<p>" + navn.substr(0, navn.indexOf(" ")) + "</p>";
+
+        document.write(fornavn);*/
+
+        /*var dateNow = new Date();
+        document.write("Today is " + dateNow.toDateString() + "<br/>")
+
+        var days = parseInt(prompt("How many day will you be gone?"), 0);
+
+        var returnDate = new Date();
+        returnDate.setDate(dateNow.getDate() + days);
+
+        document.write("Return date is: " + returnDate.toDateString());*/
+
+        /* Assignment: 90 days from now
+
+        var dateNow = new Date();
+        document.write("Today is: " + dateNow.toDateString() + "<br/>")
+
+        var days = 90;
+
+        var daysAfter90 = new Date();
+        daysAfter90.setDate(dateNow.getDate() + days);
+
+        document.write("New date is: " + daysAfter90.toDateString());
+
+        */
+
+        /*
+        var rYear = prompt("Enter the four digit year you where born");
+        var rMonth = prompt("Enter the month you where born in (1-12)");
+        var rDay = prompt("Enter the day");
+
+        var returndate = new date(rYear, rMonth, rDay);
+
+        document.write(returndate.toDateString());*/
+
+
+
+    </script>
     <!-- Javascript inclusion -->
-    <script src="main.js"></script>
 </body>
 </html>

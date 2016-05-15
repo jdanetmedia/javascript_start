@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Start på Javascript</title>
+    <script src="main.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            background: #34495e;
+        }
+
+        #visits,
+        #ad {
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            margin: 20px auto;
+            background: #2ecc71;
+            font-size: 1em;
+            padding: 20px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="visits"></div>
+    <div id="ad"></div>
+    <script>
+
+        if( localStorage.hits ){
+            localStorage.hits = parseInt(localStorage.hits) +1;
+        }
+
+        else{
+            localStorage.hits = 1;
+        }
+
+        var ads = [
+            "Buy Product A - you won't be sorry",
+            "Buy Product B - you need it",
+            "Buy Product C - it is much better than A and B"
+        ];
+
+        var item = ads[Math.floor(Math.random()*ads.length)];
+
+        document.getElementById("visits").innerHTML = "Antal besøg: " + localStorage.hits;
+        document.getElementById("ad").innerHTML = item;
+
+     /*   function changeFunc() {
+            var speed = ghz.options[ghz.selectedIndex].value;
+            var speednum = parseInt(speed);
+            var hdd = storage.options[storage.selectedIndex].value;
+            var hddnum = parseInt(hdd);
+            var screenSize = screenS.options[screenS.selectedIndex].value;
+            var screennum = parseInt(screenSize);
+            var opSys = oS.options[oS.selectedIndex].value;
+            var opSysnum = parseInt(opSys);
+            var cabinet = caSe.options[caSe.selectedIndex].value;
+            var cabinetNum = parseInt(cabinet);
+            var priceSum = speednum + hddnum + screennum + opSysnum + cabinetNum;
+            document.getElementById("price-sum").innerHTML = "Din pris: " + priceSum + " DKK";
+        }
+    */
+
+    </script>
+</body>
+</html>
